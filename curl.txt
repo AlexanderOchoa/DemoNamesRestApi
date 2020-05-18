@@ -1,0 +1,14 @@
+//register
+curl -H "Content-Type: application/json" --data "{\"code\": \"CLI01\", \"name\": \"test\"}" http://localhost:8099/clients
+//list
+curl http://localhost:8099/clients
+//get
+curl http://localhost:8099/clients/CLI01
+//get-by-name
+curl http://localhost:8099/clients/get-by-name/test
+//get-last
+curl http://localhost:8099/clients/get-last
+//update
+curl -H "Content-Type: application/json" --data "{\"code\": \"CLI01\", \"name\": \"test1\"}" -X PUT http://localhost:8099/clients
+//delete
+curl -X DELETE http://localhost:8099/clients/CLI01
