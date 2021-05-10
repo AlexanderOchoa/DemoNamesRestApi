@@ -69,8 +69,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public Client getLast() {
-        Client client = clientList.get(clientList.size()-1);
-        return client;
+        return clientList.get(clientList.size()-1);
     }
 
 }
