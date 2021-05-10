@@ -1,14 +1,14 @@
 //register
-curl -H "Content-Type: application/json" --data "{\"code\": \"CLI01\", \"name\": \"test\"}" http://localhost:8099/clients
+curl -H "Content-Type: application/json" --data "{\"code\": \"CLI01\", \"name\": \"test\"}" http://localhost:8099/v1/clients
 //list
-curl http://localhost:8099/clients
+curl http://localhost:8099/v1/clients
 //get
-curl http://localhost:8099/clients/CLI01
+curl http://localhost:8099/v1/clients/CLI01
 //get-by-name
-curl http://localhost:8099/clients/get-by-name/test
+curl http://localhost:8099/v1/clients/get-by-name/test
 //get-last
-curl http://localhost:8099/clients/get-last
+curl http://localhost:8099/v1/clients/get-last
 //update
-curl -H "Content-Type: application/json" --data "{\"code\": \"CLI01\", \"name\": \"test1\"}" -X PUT http://localhost:8099/clients
+curl -H "Content-Type: application/json" --data "{\"code\": \"CLI01\", \"name\": \"test1\"}" -X PUT http://localhost:8099/v1/clients
 //delete
-curl -X DELETE http://localhost:8099/clients/CLI01
+curl -X DELETE http://localhost:8099/v1/clients/CLI01

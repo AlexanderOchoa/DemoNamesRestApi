@@ -20,43 +20,43 @@ public class ClientControllerv2 {
         this.clientService = clientService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public ResponseEntity<List<Client>> list() {
         List<Client> list = clientService.list();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{code}/{name}",method = RequestMethod.GET)
+    @GetMapping(value = "/{code}/{name}")
     public ResponseEntity<Client> get(@PathVariable(value = "code") String code, @PathVariable(value = "name") String name) {
         Client client = clientService.get(code);
         return new ResponseEntity<>(client, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<String> register(@RequestBody Client client) {
         String result = clientService.register(client);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
+    @PutMapping
     public ResponseEntity<String> update(@RequestBody Client client) {
         String result = clientService.update(client);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{code}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/{code}")
     public ResponseEntity<String> delete(@PathVariable(value = "code") String code) {
         String result = clientService.delete(code);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get-by-name/{name}", method = RequestMethod.GET)
+    @GetMapping(value = "/get-by-name/{name}")
     public ResponseEntity<Client> getByRuc(@PathVariable(value = "name") String name) {
         Client client = clientService.getByName(name);
         return new ResponseEntity<>(client, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get-last", method = RequestMethod.GET)
+    @GetMapping(value = "/get-last")
     public ResponseEntity<Client> getLast() {
         Client client = clientService.getLast();
         return new ResponseEntity<>(client, HttpStatus.OK);
