@@ -1,6 +1,6 @@
-# DemoNameRestApi
+# Frontend
 
-### Contenido
+### Content
 - [Description](#description) 
 - [Dependencies](#dependencies) 
 - [Pre-requisites to run the application](#prerequisitestoruntheapplication) 
